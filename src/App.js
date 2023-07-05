@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+//pages import
+import ButtonPage from "./pages/ButtonPage";
+import AccordeonPage from "./pages/AccordeonPage";
+import SelectPage from "./pages/SelectPage";
+
+//Components import
+import Sidebar from "./components/Sidebar";
+import Route from "./components/Route";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<Sidebar />
+
+			<Route path="/">
+				<ButtonPage />
+			</Route>
+			<Route path="/accordeon">
+				<AccordeonPage />
+			</Route>
+			<Route path="/select">
+				<SelectPage />
+			</Route>
+		</div>
+	);
 }
 
 export default App;
